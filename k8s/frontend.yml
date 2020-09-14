@@ -17,7 +17,7 @@ spec:
         image: okteto.dev/frontend:dev
         env:                  # Environment variables supplied to the Pod
         - name: REACT_APP_API_BASE_URL # Name of the environment variable
-          value: https://polling-pchico83.cloud.okteto.net/api
+          value: https://polling-pablo.homagames.okteto.net/api
         ports:
           - name: http
             containerPort: 80   # Should match the Port that the container listens on

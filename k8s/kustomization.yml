@@ -12,7 +12,7 @@ secretGenerator:
   - database=polls
   - url=jdbc:mysql://mysql:3306/polls?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
 resources:
-  - api.yaml
-  - frontend.yaml  
-  - ingress.yaml  
-  - mysql.yaml
+  - api.yml
+  - frontend.yml  
+  - ingress.yml  
+  - mysql.yml

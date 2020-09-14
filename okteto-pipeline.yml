@@ -1,0 +1,8 @@
+icon: https://github.com/okteto/react-java-mysql-sample/raw/master/icon.png
+deploy:
+  - okteto build -t okteto.dev/frontend:dev frontend
+  - okteto build -t okteto.dev/api:dev api
+  - kubectl apply -k k8s
+devs:
+  - frontend/okteto.yml
+  - api/okteto.yml  

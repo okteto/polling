@@ -5,9 +5,8 @@ workdir: /okteto
 sync:
   - .:/okteto
 forward:
-  - 8080:80
   - 9229:9229
 resources:
   limits:
-    cpu: "1"
-    memory: 2Gi
+    cpu: "2"
+    memory: 4Gi

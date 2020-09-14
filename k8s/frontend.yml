@@ -4,7 +4,7 @@ metadata:
   name: frontend      # Name of the kubernetes resource
 spec:
   replicas: 1                   # No of replicas/pods to run
-  selector:                     
+  selector:
     matchLabels:                # This deployment applies to Pods matching the specified labels
       app: frontend
   template:                     # Template for creating the Pods in this deployment
@@ -15,9 +15,6 @@ spec:
       containers:
       - name: frontend
         image: frontend
-        env:                  # Environment variables supplied to the Pod
-        - name: REACT_APP_API_BASE_URL # Name of the environment variable
-          value: https://polling-pablo.homagames.okteto.net/api
         ports:
           - name: http
             containerPort: 80   # Should match the Port that the container listens on

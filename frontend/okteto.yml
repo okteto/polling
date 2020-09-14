@@ -4,8 +4,6 @@ command: bash
 workdir: /okteto
 sync:
   - .:/okteto
-forward:
-  - 9229:9229
 resources:
   limits:
     cpu: "2"

@@ -21,10 +21,6 @@ spec:
         ports:
           - name: http
             containerPort: 80   # Should match the Port that the container listens on
-        resources:
-          limits:
-            cpu: 0.2
-            memory: "10Mi"
 ---
 apiVersion: v1                  # API version
 kind: Service                   # Type of kubernetes resource

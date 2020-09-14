@@ -20,10 +20,6 @@ spec:
         ports:
           - name: http
             containerPort: 8080 # The port that the container exposes
-        resources:
-          limits:
-            cpu: 0.2
-            memory: "200Mi"
         env:                  # Environment variables supplied to the Pod
         - name: SPRING_DATASOURCE_USERNAME # Name of the environment variable
           valueFrom:          # Get the value of environment variable from kubernetes secrets

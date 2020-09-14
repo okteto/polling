@@ -16,7 +16,7 @@ spec:
     spec:                     # Spec for the containers that will be run in the Pods
       containers:
       - name: api
-        image: okteto.dev/api:dev
+        image: api
         ports:
           - name: http
             containerPort: 8080 # The port that the container exposes

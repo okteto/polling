@@ -1,18 +1,23 @@
 # The secrets file should not be checked into Git. It's published only for demonstration purpose.
 secretGenerator:
-- name: mysql-root-pass
-  literals:
+- literals:
   - password=R00t
-- name: mysql-user-pass
-  literals:
+  name: mysql-root-pass
+- literals:
   - username=callicoder
-  - password=c@ll1c0d3r 
-- name: mysql-db-url
-  literals:
+  - password=c@ll1c0d3r
+  name: mysql-user-pass
+- literals:
   - database=polls
   - url=jdbc:mysql://mysql:3306/polls?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+  name: mysql-db-url
 resources:
-  - api.yml
-  - frontend.yml  
-  - ingress.yml  
-  - mysql.yml
+- api.yml
+- frontend.yml
+- ingress.yml
+- mysql.yml
+images:
+- name: api
+- name: frontend
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization

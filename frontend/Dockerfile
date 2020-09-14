@@ -17,7 +17,7 @@ RUN npm install
 COPY . ./
 
 # Arguments
-ENV REACT_APP_API_BASE_URL=https://polling-pchico83.cloud.okteto.net/api
+ENV REACT_APP_API_BASE_URL=https://polling-pablo.homagames.okteto.net/api
 
 # Build the application
 RUN npm run build

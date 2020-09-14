@@ -1,4 +1,4 @@
-icon: https://github.com/okteto/react-java-mysql-sample/raw/master/icon.png
+icon: https://github.com/okteto/polling/raw/master/icon.png
 deploy:
   - okteto build -t okteto.dev/frontend:dev frontend
   - okteto build -t okteto.dev/api:dev api

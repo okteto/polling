@@ -7,7 +7,6 @@ volumes:
 sync:
   - .:/okteto
 forward:
-  - 8080:8080
   - 5005:5005
 resources:
   limits:

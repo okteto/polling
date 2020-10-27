@@ -5,7 +5,6 @@ metadata:                          # Claim name and labels
   labels:
     app: polling-app
 spec:                              # Access mode and resource limits
-  storageClassName: standard       # Request a certain storage class
   accessModes:
     - ReadWriteOnce                # ReadWriteOnce means the volume can be mounted as read-write by a single Node
   resources:

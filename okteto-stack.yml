@@ -1,0 +1,41 @@
+name: polling
+services:
+  mysql:
+    image: mysql:5.6
+    labels:
+      app: mysql
+    ports:
+      - 3306
+    resources:
+      storage: 1Gi
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=R00t
+      - MYSQL_DATABASE=polls
+      - MYSQL_USER=callicoder
+      - MYSQL_PASSWORD=c@ll1c0d3r
+  api:
+    build: api
+    ports:
+      - 8080
+    labels:
+      app: api
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/polls?useSSL=false&serverTimezone=UTC&useLegacyDatetimeCode=false
+      - SPRING_DATASOURCE_USERNAME=callicoder
+      - SPRING_DATASOURCE_PASSWORD=c@ll1c0d3r
+  frontend:
+    build: frontend
+    ports:
+      - 80
+    labels:
+      app: frontend
+endpoints:
+  polling:
+  - path: /
+    service: frontend
+    port: 80
+  - path: /api
+    service: api
+    port: 8080

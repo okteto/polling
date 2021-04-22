@@ -1,6 +1,6 @@
 icon: https://github.com/okteto/polling/raw/master/icon.png
 deploy:
-  - okteto stack --build --file okteto-stack.yml
+  - okteto stack deploy --build --file okteto-stack.yml
 devs:
   - frontend/okteto.yml
   - api/okteto.yml

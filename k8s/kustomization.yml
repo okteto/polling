@@ -14,7 +14,7 @@ secretGenerator:
 resources:
 - api.yml
 - frontend.yml
-- ingress.yml
+- ingressv1.yml
 - mysql.yml
 images:
 - name: api

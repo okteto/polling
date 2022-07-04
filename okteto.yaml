@@ -1,35 +1,29 @@
 icon: https://github.com/okteto/polling/raw/master/icon.png
+
 build: 
   api: 
     context: api
   frontend: 
     context: frontend
+
 deploy: 
   - cd k8s && kustomize edit set image frontend=${OKTETO_BUILD_FRONTEND_IMAGE}
   - cd k8s && kustomize edit set image api=${OKTETO_BUILD_API_IMAGE}
   - kubectl apply -k k8s
+
 dev: 
   api: 
     image: okteto/maven:latest
     command: bash
-    workdir: /okteto
     volumes:
       - /root/.m2
     sync:
-      - api:/okteto
+      - api:/usr/src/app
     forward:
       - 5005:5005
-    resources:
-      limits:
-        cpu: "1"
-        memory: 3Gi
+
   frontend: 
     image: okteto/node:12
     command: bash
-    workdir: /okteto
     sync:
-      - frontend:/okteto
-    resources:
-      limits:
-        cpu: "1"
-        memory: 3Gi
+      - frontend:/usr/src/app
